@@ -348,12 +348,10 @@ function ldosetup() {
           log_info "${path}/printer.cfg"
 
           sudo sed -i "s|#{serial_mcu}#|$selected_mcu_id|gi" "${selected_printer_cfg}"
-          sudo sed -i "s|#{serial_mcu}#|$selected_mcu_id|gi" "${selected_printer_cfg}"
 
           if grep -Eq "#{serial_mcu_umb}#" "${selected_printer_cfg}"; then
             select_mcu_connection
             select_mcu_id_ldo "Umbilical"
-            sudo sed -i "s|#{serial_mcu_umb}#|$selected_mcu_id|gi" "${selected_printer_cfg}"
             sudo sed -i "s|#{serial_mcu_umb}#|$selected_mcu_id|gi" "${selected_printer_cfg}"
           fi
 
